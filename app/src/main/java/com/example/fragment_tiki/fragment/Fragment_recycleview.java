@@ -7,7 +7,9 @@ import android.view.ViewGroup;
 
 import com.example.fragment_tiki.R;
 import com.example.fragment_tiki.adapter.BookAdapter;
+import com.example.fragment_tiki.adapter.DonutAdapter;
 import com.example.fragment_tiki.model.Book;
+import com.example.fragment_tiki.model.Donut;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +26,8 @@ public class Fragment_recycleview extends Fragment {
     private List<Book> bookList;
     private RecyclerView recyclerView;
     private BookAdapter bookAdapter;
+    private List<Donut> donutList;
+    private DonutAdapter donutAdapter;
 
     @Nullable
     @Override
@@ -32,11 +36,16 @@ public class Fragment_recycleview extends Fragment {
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
         bookList = new ArrayList<>();
-        bookAdapter = new BookAdapter(getActivity(),bookList);
+        donutList = new ArrayList<>();
+//        bookAdapter = new BookAdapter(getActivity(),bookList);
+//        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
+//        recyclerView.setLayoutManager(mLayoutManager);
+//        recyclerView.setAdapter(bookAdapter);
+        donutAdapter = new DonutAdapter(donutList, getActivity());
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.setAdapter(bookAdapter);
-        createData();
+        recyclerView.setAdapter(donutAdapter);
+        createData1();
         return view;
     }
 
@@ -54,5 +63,16 @@ public class Fragment_recycleview extends Fragment {
         book = new Book("Nỗi Đau Của Đom Đóm","Qủy Cổ Nữ","100.000");
         bookList.add(book);
         bookAdapter.notifyDataSetChanged();
+    }
+
+    public void createData1(){
+        Donut donut = new Donut("bánh 1","ngon", R.drawable.donut_yellow);
+        Donut donut2 = new Donut("bánh 2","ngon lắm", R.drawable.donut_yellow);
+        Donut donut3 = new Donut("bánh 3","rất ngon", R.drawable.donut_yellow);
+        donutList.add(donut);
+        donutList.add(donut2);
+        donutList.add(donut3);
+        donutAdapter.notifyDataSetChanged();
+
     }
 }
