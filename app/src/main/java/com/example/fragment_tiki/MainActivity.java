@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import com.example.fragment_tiki.adapter.BookAdapter;
 import com.example.fragment_tiki.adapter.HeroAdapter;
+import com.example.fragment_tiki.fragment.Fragment_recycleview;
 import com.example.fragment_tiki.model.Book;
 import com.example.fragment_tiki.model.Hero;
 
@@ -23,8 +24,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        addControl();
-        addEvent();
+
+
+        Fragment_recycleview fragment_recycleview = new Fragment_recycleview();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.frame, fragment_recycleview, "fragmentAbove")
+                .commit();
+
+//        addControl();
+//        addEvent();
     }
 
     private void addControl() {
