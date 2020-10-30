@@ -50,6 +50,7 @@ public class Fragment_recycleview extends Fragment {
     }
 
 
+
     /** Add data to bookList*/
     public void createData() {
         Book book = new Book("Kỳ Án Ánh Trăng","Xác treo trong nhà gỗ","100.000");
@@ -66,12 +67,14 @@ public class Fragment_recycleview extends Fragment {
     }
 
     public void createData1(){
-        Donut donut = new Donut("bánh 1","ngon", R.drawable.donut_yellow);
-        Donut donut2 = new Donut("bánh 2","ngon lắm", R.drawable.donut_yellow);
-        Donut donut3 = new Donut("bánh 3","rất ngon", R.drawable.donut_yellow);
+        Donut donut = new Donut("bánh 1","ngon", "300",R.drawable.donut_yellow);
+        Donut donut2 = new Donut("bánh 2","ngon lắm","300", R.drawable.donut_yellow);
+        Donut donut3 = new Donut("bánh 3","rất ngon","300", R.drawable.donut_yellow);
+        Donut donut4 = new Donut("bánh 4","rất ngon","300", R.drawable.donut_yellow);
         donutList.add(donut);
         donutList.add(donut2);
         donutList.add(donut3);
+        donutList.add(donut4);
         donutAdapter.notifyDataSetChanged();
 
     }
