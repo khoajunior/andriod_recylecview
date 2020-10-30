@@ -1,6 +1,8 @@
 package com.example.fragment_tiki.model;
 
-public class Donut {
+import java.io.Serializable;
+
+public class Donut implements Serializable {
     private String title;
     private String desp;
     private String price;

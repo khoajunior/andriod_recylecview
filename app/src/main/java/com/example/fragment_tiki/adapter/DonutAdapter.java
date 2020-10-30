@@ -49,8 +49,9 @@ public class DonutAdapter extends RecyclerView.Adapter<DonutAdapter.DonutViewHol
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(activity, donut.toString(),Toast.LENGTH_SHORT).show();
+                //Toast.makeText(activity, donut.toString(),Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(activity, MainActivity2.class);
+                intent.putExtra("obj",donut);
                 activity.startActivity(intent);
             }
         });
